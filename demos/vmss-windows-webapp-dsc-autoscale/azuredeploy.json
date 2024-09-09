@@ -219,6 +219,25 @@
                 "id": "[variables('lbProbeID')]"
               }
             }
+          },
+          {
+            "name": "LBRuleSSL",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[variables('frontEndIPConfigID')]"
+              },
+              "backendAddressPool": {
+                "id": "[variables('lbPoolID')]"
+              },
+              "protocol": "Tcp",
+              "frontendPort": 443,
+              "backendPort": 443,
+              "enableFloatingIP": false,
+              "idleTimeoutInMinutes": 5,
+              "probe": {
+                "id": "[variables('lbSSLProbeID')]"
+              }
+            }
           }
         ],
         "probes": [
@@ -227,6 +246,15 @@
             "properties": {
               "protocol": "Tcp",
               "port": 80,
+              "intervalInSeconds": 5,
+              "numberOfProbes": 2
+            }
+          },
+          {
+            "name": "tcpSSLProbe",
+            "properties": {
+              "protocol": "Tcp",
+              "port": 443,
               "intervalInSeconds": 5,
               "numberOfProbes": 2
             }
