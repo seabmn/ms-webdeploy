@@ -137,6 +137,7 @@
     "loadBalancerName": "[format('{0}lb', variables('vmScaleSetName'))]",
     "publicIPAddressID": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddressName'))]",
     "lbProbeID": "[resourceId('Microsoft.Network/loadBalancers/probes', variables('loadBalancerName'), 'tcpProbe')]",
+    "lbSSLProbeID": "[resourceId('Microsoft.Network/loadBalancers/probes', variables('loadBalancerName'), 'tcpProbe')]",
     "natPoolName": "[format('{0}natpool', variables('vmScaleSetName'))]",
     "bePoolName": "[format('{0}bepool', variables('vmScaleSetName'))]",
     "lbPoolID": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', variables('loadBalancerName'), variables('bePoolName'))]",
