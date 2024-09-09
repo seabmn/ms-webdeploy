@@ -357,6 +357,9 @@
     },
     {
       "type": "Microsoft.Network/publicIPAddresses",
+      "sku":  {
+        "name": "Standard"
+      },
       "apiVersion": "2023-04-01",
       "name": "[variables('publicIPAddressName')]",
       "location": "[parameters('location')]",
