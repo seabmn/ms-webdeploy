@@ -167,7 +167,9 @@
     {
       "type": "Microsoft.Network/loadBalancers",
       "apiVersion": "2023-04-01",
-      "sku": "standard",
+      "sku":  {
+        "name": "Standard"
+      },
       "name": "[variables('loadBalancerName')]",
       "location": "[parameters('location')]",
       "properties": {
